@@ -128,7 +128,7 @@ nav {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding: 2rem;
     position: relative;
 }
@@ -340,13 +340,13 @@ textarea {
 /* Custom Video Player Styles */
 .video-container {
     position: relative;
-    width: 100%;
-    max-width: 576px;
+    width: 576px;
     aspect-ratio: 16 / 9;
     height: auto;
     cursor: pointer;
     overflow: hidden;
-    flex-shrink: 1;
+    flex-shrink: 0;
+    flex: 0 0 576px;
     margin: 0 auto;
 }
 
@@ -397,4 +397,13 @@ textarea {
 
 .video-container.playing .play-icon {
     display: none;
+}
+
+/* Responsive override for video sizing */
+@media (max-width: 1000px) {
+    .video-container {
+        width: 100%;
+        max-width: 576px;
+        flex: 0 0 auto;
+    }
 } 
